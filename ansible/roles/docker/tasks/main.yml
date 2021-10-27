@@ -1,0 +1,18 @@
+  - name: Add extrass repository
+    shell: yum-config-manager --enable extras
+
+  - name: Install docker-ce via amanzon-linux-extras packages
+    shell: "amazon-linux-extras install docker=18.06.1 -y" 
+
+  - name: Enable docker CE
+    systemd:
+      name: docker
+      state: started
+      enabled: yes
+
+  - name: add user and group docker
+    user:
+      name: '{{ item }}'
+      group: docker
+      append: yes
+    with_items: "{{ USERS }}"

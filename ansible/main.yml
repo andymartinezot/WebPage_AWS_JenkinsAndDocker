@@ -1,0 +1,25 @@
+- name: "Play Web App from Ansible"
+  hosts: target
+  become: true
+  remote_user: ec2-user
+  become_user: root
+  vars_files:
+    - files/vars.yml
+    #- files/sec.yml
+  
+  roles:
+    - jenkins
+    #- ansible_terraform
+    - docker
+    #- kubernetes
+    #- awsconfig
+    #- apache
+    #- php
+    #- mysql
+    #- wordpress
+    #- academy
+
+  #tasks: 
+    #- name: "view facts"
+    #  debug:
+    #    var: ansible_facts

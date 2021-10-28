@@ -9,8 +9,9 @@
   
   roles:
     - jenkins
-    #- ansible_terraform
     - docker
+    - git
+    #- ansible_terraform
     #- kubernetes
     #- awsconfig
     #- apache

@@ -25,19 +25,12 @@ pipeline{
 //                      """
 //                 }
 //             }
-//         }
-        stage('registry'){
-            steps{
-                script{
-                    docker.withRegistry('registry.hub.docker/andymartinez/web-php-mysql', 'docker_id')
-                }    
-            }
-        }      
+//         }    
         stage('build'){
             steps{
                 script{
                     sh """
-                        docker pull andymartinez/web-php-mysql
+                        docker pull andymartinez/web-php-mysql:latest
                     """
                 }
             }

@@ -30,7 +30,7 @@ pipeline{
             steps{
                 script{
                     sh """
-                        docker pull andymartinez/web-php-mysql-image
+                        docker pull andymartinez/web-php-mysql-image:v2
                     """
                 }
             }

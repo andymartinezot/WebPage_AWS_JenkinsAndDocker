@@ -28,7 +28,9 @@ pipeline{
 //         }
         stage('registry'){
             steps{
-               docker.withRegistry('registry.hub.docker/andymartinez/web-php-mysql', 'docker_id')
+                script{
+                    docker.withRegistry('registry.hub.docker/andymartinez/web-php-mysql', 'docker_id')
+                }    
             }
         }      
         stage('build'){
